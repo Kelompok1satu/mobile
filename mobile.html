@@ -10,18 +10,43 @@
     body {
       font-family: 'Poppins', sans-serif;
     }
+
+    /* Carousel animation */
+    .carousel {
+      display: flex;
+      width: 300%;
+      animation: slide 12s infinite;
+    }
+
+    @keyframes slide {
+      0%, 25% { transform: translateX(0%); }
+      33%, 58% { transform: translateX(-100%); }
+      66%, 91% { transform: translateX(-200%); }
+      100% { transform: translateX(0%); }
+    }
   </style>
 </head>
 <body class="bg-[#f1f5f9] min-h-screen flex flex-col items-center">
 
   <!-- Header -->
   <div class="w-full bg-yellow-300 shadow-md py-4 px-6 flex items-center justify-start gap-4">
-    <img src="946b1906-f3a9-41c1-acdf-4234b909d0de.jfif" alt="Logo" class="w-10 h-10" />
+    <img src="946b1906-f3a9-41c1-acdf-4234b909d0de.jfif" alt="Logo" class="w-10 h-10 rounded-full" />
     <h1 class="text-xl font-bold text-gray-800">Riz-To Snack</h1>
   </div>
 
-  <!-- Menu Grid -->
-  <div class="w-full max-w-sm mt-10 px-4 grid grid-cols-2 gap-4">
+  <!-- Carousel -->
+  <div class="overflow-hidden w-full max-w-sm mt-4 rounded-xl shadow-lg">
+    <div class="carousel">
+      <img src="946b1906-f3a9-41c1-acdf-4234b909d0de.jfif" class="w-full h-48 object-cover" alt="Slide 1" />
+      <img src="brambang.jpg" class="w-full h-48 object-cover" alt="Slide 2" />
+      <img src="peyek5lt.jpg" class="w-full h-48 object-cover" alt="Slide 3" />
+    </div>
+  </div>
+
+  <!-- Spacer -->
+  <div class="flex-1"></div>
+
+<div class="w-full max-w-sm mt-10 px-4 grid grid-cols-2 gap-4">
     <!-- Produk -->
     <a href="#produk" class="flex flex-col items-center bg-white rounded-2xl shadow-lg p-4 active:scale-95 transition">
       <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -54,6 +79,9 @@
       <span class="mt-2 text-sm font-medium text-gray-700">Riwayat</span>
     </a>
   </div>
+
+</body>
+</html>
 
 </body>
 </html>
