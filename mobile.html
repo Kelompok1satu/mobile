@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kasir Mobile</title>
+  <title>Riz-To Snack</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
   <style>
@@ -15,11 +15,9 @@
 <body class="bg-[#f1f5f9] min-h-screen flex flex-col items-center">
 
   <!-- Header -->
-  <div class="w-full bg-white shadow-md py-4 px-6 flex items-center justify-between">
-    <div>
-      <h1 class="text-xl font-bold text-gray-800">Kasir</h1>
-      <img src="946b1906-f3a9-41c1-acdf-4234b909d0de.jfif" alt="Logo" class="w-10 h-10 mt-1" />
-    </div>
+  <div class="w-full bg-white shadow-md py-4 px-6 flex items-center justify-start gap-4">
+    <img src="946b1906-f3a9-41c1-acdf-4234b909d0de.jfif" alt="Logo" class="w-10 h-10" />
+    <h1 class="text-xl font-bold text-gray-800">Riz-To Snack</h1>
   </div>
 
   <!-- Menu Grid -->
@@ -40,10 +38,10 @@
       <span class="mt-2 text-sm font-medium text-gray-700">Stok</span>
     </a>
 
-    <!-- Pesanan -->
+    <!-- Pesanan (icon diganti ke shopping cart) -->
     <a href="#pesanan" class="flex flex-col items-center bg-white rounded-2xl shadow-lg p-4 active:scale-95 transition">
       <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-6a3 3 0 016 0v6m-6 0h6" />
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 5m12-5l2 5M9 21h.01M15 21h.01" />
       </svg>
       <span class="mt-2 text-sm font-medium text-gray-700">Pesanan</span>
     </a>
@@ -54,22 +52,6 @@
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
       <span class="mt-2 text-sm font-medium text-gray-700">Riwayat</span>
-    </a>
-  </div>
-
-  <!-- Footer (Optional) -->
-  <div class="fixed bottom-0 w-full max-w-sm bg-white border-t shadow-inner flex justify-around py-3">
-    <a href="#home" class="flex flex-col items-center text-blue-600">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10l9-7 9 7v10a2 2 0 01-2 2h-4a2 2 0 01-2-2V12H9v8a2 2 0 01-2 2H5a2 2 0 01-2-2V10z" />
-      </svg>
-      <span class="text-xs">Beranda</span>
-    </a>
-    <a href="#akun" class="flex flex-col items-center text-gray-400">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A4 4 0 0110 15h4a4 4 0 014.879 2.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-      <span class="text-xs">Akun</span>
     </a>
   </div>
 
