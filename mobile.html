@@ -30,6 +30,7 @@
     <h1 class="text-xl font-bold text-gray-800">Riz-To Snack</h1>
   </div>
 
+  <br>
   <!-- Logo Bulat dengan animasi bounce -->
   <div class="text-center mt-6">
     <img
@@ -39,6 +40,8 @@
     >
   </div>
 
+  <br>
+  <br>
   <!-- Menu Grid -->
   <div class="w-full max-w-sm px-4 grid grid-cols-2 gap-4 mt-4">
     <!-- Produk -->
@@ -73,23 +76,10 @@
       <span class="mt-2 text-sm font-medium text-gray-700">Riwayat</span>
     </a>
   </div>
-
+<br>
+<br>
   <!-- Garis bawah sebagai bingkai -->
   <div class="w-full max-w-sm mt-6 border-t-4 border-yellow-400 rounded-lg"></div>
-
-  <!-- Carousel Script -->
-  <script>
-    const carousel = document.getElementById('carousel');
-    if (carousel) {
-      const slides = carousel.querySelectorAll('img');
-      let index = 0;
-
-      setInterval(() => {
-        index = (index + 1) % slides.length;
-        carousel.style.transform = `translateX(-${index * 100}%)`;
-      }, 2000);
-    }
-  </script>
 
 </body>
 </html>
