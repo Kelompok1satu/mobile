@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Riz-To Snack</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
@@ -10,77 +10,72 @@
     body {
       font-family: 'Poppins', sans-serif;
     }
-    .carousel {
+    .app-container {
+      max-width: 430px; /* ukuran seperti mobile */
+      margin: auto;
+      background-color: #f1f5f9;
+      min-height: 100vh;
       display: flex;
-      width: 300%;
-      transition: transform 0.5s ease-in-out;
-    }
-    .carousel img {
-      width: 100%;
-      flex-shrink: 0;
-      object-fit: cover;
+      flex-direction: column;
     }
   </style>
 </head>
-<body class="bg-[#f1f5f9] min-h-screen flex flex-col items-center">
+<body class="bg-[#f1f5f9] flex justify-center items-center">
 
-  <!-- Header -->
-  <div class="w-full bg-yellow-300 shadow-md py-4 px-6 flex items-center justify-start gap-4">
-    <img src="946b1906-f3a9-41c1-acdf-4234b909d0de.jfif" alt="Logo" class="w-10 h-10" />
-    <h1 class="text-xl font-bold text-gray-800">Riz-To Snack</h1>
-  </div>
+  <div class="app-container shadow-xl rounded-lg overflow-hidden">
 
-  <br>
-  <!-- Logo Bulat dengan animasi bounce -->
-  <div class="text-center mt-6">
-    <img
-      src="946b1906-f3a9-41c1-acdf-4234b909d0de.jfif"
-      class="w-48 h-48 sm:w-60 sm:h-60 object-cover rounded-full mx-auto animate-bounce"
-      alt="Logo Bulat"
-    >
-  </div>
-
-  <br><br><br>
-
-  <!-- Menu Grid -->
-  <div class="w-full max-w-sm px-4 grid grid-cols-2 gap-4 mt-4">
-    <!-- Produk -->
-    <a href="#produk" class="flex flex-col items-center bg-white rounded-2xl shadow-lg p-4 active:scale-95 transition">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V5a1 1 0 00-1-1H9a1 1 0 00-1 1v6m8 0v6a1 1 0 01-1 1H9a1 1 0 01-1-1v-6m10-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2m-12 0H4a1 1 0 01-1-1v-6a1 1 0 011-1h2" />
-      </svg>
-      <span class="mt-2 text-sm font-medium text-gray-700">Produk</span>
-    </a>
-
-    <!-- Stok -->
-    <a href="#stok" class="flex flex-col items-center bg-white rounded-2xl shadow-lg p-4 active:scale-95 transition">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 6h18M3 14h18M3 18h18" />
-      </svg>
-      <span class="mt-2 text-sm font-medium text-gray-700">Stok</span>
-    </a>
-
-    <!-- Pesanan -->
-    <a href="#pesanan" class="flex flex-col items-center bg-white rounded-2xl shadow-lg p-4 active:scale-95 transition">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 5m12-5l2 5M9 21h.01M15 21h.01" />
-      </svg>
-      <span class="mt-2 text-sm font-medium text-gray-700">Pesanan</span>
-    </a>
-
-    <!-- Riwayat -->
-    <a href="#riwayat" class="flex flex-col items-center bg-white rounded-2xl shadow-lg p-4 active:scale-95 transition">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-      <span class="mt-2 text-sm font-medium text-gray-700">Riwayat</span>
-    </a>
-  </div>
+    <!-- Header -->
+    <div class="sticky top-0 z-10 w-full bg-yellow-300 shadow-md py-4 px-6 flex items-center gap-4">
+      <img src="946b1906-f3a9-41c1-acdf-4234b909d0de.jfif" alt="Logo" class="w-10 h-10 rounded-full" />
+      <h1 class="text-xl font-bold text-gray-800">Riz-To Snack</h1>
+    </div>
 <br>
-  <!-- Footer -->
-  <footer class="w-full bg-yellow-300 text-center py-4 mt-auto">
-    <p class="text-sm text-gray-800">&copy; 2025 Riz-To Snack. Semua Hak Dilindungi.</p>
-  </footer>
+    <!-- Logo Bulat -->
+    <div class="text-center mt-6">
+      <img src="946b1906-f3a9-41c1-acdf-4234b909d0de.jfif" class="w-36 h-36 object-cover rounded-full mx-auto animate-bounce" alt="Logo Bulat">
+    </div>
+
+    <!-- Menu Grid -->
+    <div class="w-full px-4 grid grid-cols-2 gap-4 mt-10">
+      <!-- Produk -->
+      <a href="#produk" class="flex flex-col items-center bg-white rounded-2xl shadow-md p-4 active:scale-95 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V5a1 1 0 00-1-1H9a1 1 0 00-1 1v6m8 0v6a1 1 0 01-1 1H9a1 1 0 01-1-1v-6m10-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2m-12 0H4a1 1 0 01-1-1v-6a1 1 0 011-1h2" />
+        </svg>
+        <span class="mt-2 text-xs font-medium text-gray-700">Produk</span>
+      </a>
+
+      <!-- Stok -->
+      <a href="#stok" class="flex flex-col items-center bg-white rounded-2xl shadow-md p-4 active:scale-95 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 6h18M3 14h18M3 18h18" />
+        </svg>
+        <span class="mt-2 text-xs font-medium text-gray-700">Stok</span>
+      </a>
+
+      <!-- Pesanan -->
+      <a href="#pesanan" class="flex flex-col items-center bg-white rounded-2xl shadow-md p-4 active:scale-95 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 5m12-5l2 5M9 21h.01M15 21h.01" />
+        </svg>
+        <span class="mt-2 text-xs font-medium text-gray-700">Pesanan</span>
+      </a>
+
+      <!-- Riwayat -->
+      <a href="#riwayat" class="flex flex-col items-center bg-white rounded-2xl shadow-md p-4 active:scale-95 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span class="mt-2 text-xs font-medium text-gray-700">Riwayat</span>
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-300 text-center py-4 mt-10">
+      <p class="text-xs text-gray-800">Kasir Riz-to Snack</p>
+    </footer>
+
+  </div>
 
 </body>
 </html>
