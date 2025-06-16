@@ -31,15 +31,15 @@
   </div>
 
   <!-- Carousel Wrapper -->
-  <div class="w-full max-w-sm p-4">
-    <div class="rounded-xl overflow-hidden shadow-lg">
-      <div id="carousel" class="carousel">
-        <img src="brambang.jpg" alt="Slide 1">
-        <img src="peyek5lt.jpg" alt="Slide 2">
-        <img src="peyek10k.jpg" alt="Slide 3">
-      </div>
-    </div>
+<div class="relative w-full h-[750px] sm:h-[750px] md:h-[1000px] overflow-hidden">
+  <div id="carousel" class="absolute top-0 left-0 w-full h-full flex transition-transform duration-1000">
+    <img src="brambang.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Slide 1" />
+    <img src="peyek5lt.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Slide 2" />
+    <img src="peyek10k.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Slide 3" />
   </div>
+</div>
+
+
 
   <!-- Menu Grid -->
   <div class="w-full max-w-sm px-4 grid grid-cols-2 gap-4 mt-0">
