@@ -15,7 +15,6 @@
 </head>
 <body class="min-h-screen flex flex-col items-center relative px-4">
 
-  <!-- Tombol Kembali -->
   <a href="mobile.html"
      class="absolute top-4 left-4 flex items-center gap-2 bg-white text-yellow-600 font-medium px-4 py-2 rounded-full shadow-lg hover:bg-yellow-100 transition duration-200">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -24,14 +23,13 @@
     Kembali
   </a>
 
-  <!-- Logo -->
   <div class="mt-6 mb-4">
     <img src="946b1906-f3a9-41c1-acdf-4234b909d0de.jfif"
          alt="Logo Riz-To"
          class="w-28 h-28 object-cover rounded-full mx-auto animate-bounce shadow-lg border-4 border-yellow-400">
   </div>
 
-  <!-- Form Pesanan -->
+ 
   <div class="w-full max-w-md bg-white p-6 rounded-xl shadow-lg mb-8">
     <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Formulir Pesanan</h2>
     <form id="formPesanan" class="space-y-4">
@@ -47,11 +45,7 @@
         <label for="tanggal" class="block text-sm font-medium text-gray-700">Tanggal Diambil</label>
         <input type="date" id="tanggal" required class="w-full border rounded-lg px-3 py-2">
       </div>
-      <div>
-        <label for="total" class="block text-sm font-medium text-gray-700">Total Bayar (Rp)</label>
-        <input type="number" id="total" readonly class="w-full border rounded-lg px-3 py-2 bg-gray-100 cursor-not-allowed">
-      </div>
-      <div>
+         <div>
         <label class="block text-sm font-medium text-gray-700 mb-1">Metode Pengambilan</label>
         <label class="inline-flex items-center mr-4">
           <input type="radio" name="metode" value="COD" required class="form-radio text-yellow-500">
@@ -62,6 +56,11 @@
           <span class="ml-2">Ambil di Rumah</span>
         </label>
       </div>
+      <div>
+        <label for="total" class="block text-sm font-medium text-gray-700">Total Bayar (Rp)</label>
+        <input type="number" id="total" readonly class="w-full border rounded-lg px-3 py-2 bg-gray-100 cursor-not-allowed">
+      </div>
+    <br>
       <div class="text-center">
         <button type="submit"
                 class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-6 rounded-lg shadow-md transition">
