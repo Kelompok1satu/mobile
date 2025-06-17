@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Pesanan - Riz-To Snack</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+  <style> body { font-family: 'Poppins', sans-serif; } </style>
+</head>
+<body class="bg-[#fef9c3] min-h-screen flex items-center justify-center">
+
+  <div class="w-full max-w-md bg-white p-6 rounded-xl shadow-lg">
+    <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Formulir Pesanan</h2>
+    <form id="formPesanan" class="space-y-4">
+      <div>
+        <label for="jumlah" class="block text-sm font-medium text-gray-700">Jumlah Produk</label>
+        <input type="number" id="jumlah" required min="1" class="w-full border rounded-lg px-3 py-2">
+      </div>
+      <div>
+        <label for="tanggal" class="block text-sm font-medium text-gray-700">Tanggal Diambil</label>
+        <input type="date" id="tanggal" required class="w-full border rounded-lg px-3 py-2">
+      </div>
+      <div>
+        <label for="total" class="block text-sm font-medium text-gray-700">Total Bayar (Rp)</label>
+        <input type="number" id="total" required min="0" class="w-full border rounded-lg px-3 py-2">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Metode Pengambilan</label>
+        <label class="inline-flex items-center mr-4">
+          <input type="radio" name="metode" value="COD" required class="form-radio text-yellow-500">
+          <span class="ml-2">COD</span>
+        </label>
+        <label class="inline-flex items-center">
+          <input type="radio" name="metode" value="Ambil di Rumah" required class="form-radio text-yellow-500">
+          <span class="ml-2">Ambil di Rumah</span>
+        </label>
+      </div>
+      <div class="text-center">
+        <button type="submit"
+                class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-6 rounded-lg shadow-md">
+          Kirim
+        </button>
+      </div>
+    </form>
+    <div class="mt-4 text-center">
+      <a href="index.html" class="text-sm text-blue-600">Kembali ke Beranda</a>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('formPesanan');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const pesanan = {
+        jumlah: document.getElementById('jumlah').value,
+        tanggal: document.getElementById('tanggal').value,
+        total: document.getElementById('total').value,
+        metode: document.querySelector('input[name="metode"]:checked').value
+      };
+
+      let riwayat = JSON.parse(localStorage.getItem('riwayat')) || [];
+      riwayat.push(pesanan);
+      localStorage.setItem('riwayat', JSON.stringify(riwayat));
+
+      alert("Pesanan berhasil dikirim!");
+      window.location.href = "index.html#riwayat";
+    });
+  </script>
+</body>
+</html>
