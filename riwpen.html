@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Riwayat Penjualan Riz-To Snack</title>
+<style>
+  body {
+    background-color: #ffeb3b;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    margin: 0;
+  }
+  .back-button {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+  .back-button button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fbc02d;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+  }
+  .back-button button:hover {
+    background: #fff59d;
+  }
+  .logo {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .logo img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  }
+  h1 {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  .date-inputs {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px 0;
+  }
+  .date-inputs input {
+    flex: 1 1 45%;
+    padding: 5px;
+    font-size: 0.9rem;
+  }
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+  table {
+    min-width: 600px;
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    font-size: 0.9rem;
+  }
+  table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  table th {
+    background-color: #ffe082;
+    font-weight: bold;
+  }
+  table tr:nth-child(even) {
+    background: #fffde7;
+  }
+  table tr:last-child td {
+    font-weight: bold;
+    background: #fafafa;
+  }
+  .button-group {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    margin-top: 10px;
+  }
+  .btn-print {
+    background-color: #2196f3;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  .btn-print:hover {
+    background-color: #1976d2;
+  }
+</style>
+</head>
+<body>
+  <!-- Tombol Kembali -->
+  <div class="back-button">
+    <button onclick="window.history.back()">&larr; Kembali</button>
+  </div>
+
+  <!-- Logo -->
+  <div class="logo">
+    <img src="logoriztosnack.jpeg" alt="Logo Riz-To Snack">
+  </div>
+
+  <h1>Riwayat Penjualan</h1>
+
+  <div class="date-inputs">
+    <input type="date" value="2025-06-19" />
+    <input type="date" value="2025-06-21" />
+  </div>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Tanggal</th>
+          <th>Nama Makanan</th>
+          <th>Harga</th>
+          <th>Jumlah</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>19-06-2025</td><td>Brambang Goreng</td><td>Rp. 15.000</td><td>1</td><td>Rp. 15.000</td></tr>
+        <tr><td>2</td><td>19-06-2025</td><td>Peyek 5 Lt</td><td>Rp. 50.000</td><td>2</td><td>Rp. 100.000</td></tr>
+        <tr><td>3</td><td>20-06-2025</td><td>Peyek 100 Gram</td><td>Rp. 10.000</td><td>3</td><td>Rp. 30.000</td></tr>
+        <tr><td>4</td><td>20-06-2025</td><td>Brambang Goreng</td><td>Rp. 15.000</td><td>1</td><td>Rp. 15.000</td></tr>
+        <tr><td>5</td><td>21-06-2025</td><td>Peyek 5 Lt</td><td>Rp. 50.000</td><td>1</td><td>Rp. 50.000</td></tr>
+        <tr><td>6</td><td>21-06-2025</td><td>Peyek 100 Gram</td><td>Rp. 10.000</td><td>2</td><td>Rp. 20.000</td></tr>
+        <tr><td colspan="5">Total</td><td>Rp. 230.000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Hanya tombol cetak -->
+  <div class="button-group">
+    <button class="btn-print" onclick="window.print()">Cetak</button>
+  </div>
+</body>
+</html>
