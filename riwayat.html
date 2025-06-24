@@ -48,35 +48,39 @@
         const card = document.createElement("div");
         card.className = "bg-white rounded-xl p-4 shadow-md";
 
-        card.innerHTML = `
-          <div class="mb-2">
-            <p class="text-sm"><strong>Nama:</strong> ${item.nama}</p>
-            <p class="text-sm"><strong>Tanggal:</strong> ${item.tanggal}</p>
-            <p class="text-sm"><strong>Metode:</strong> ${item.metode}</p>
-          </div>
-          <div class="text-sm">
-            <p><strong>Produk:</strong></p>
-            <ul class="list-disc ml-5 text-gray-700">${produkList}</ul>
-            <p class="mt-1"><strong>Total:</strong> Rp${item.total}</p>
-          </div>
-          <div class="mt-3 flex flex-col gap-2">
-            <p><strong>Status:</strong> 
-              <span id="status-${index}" class="font-semibold ${status === 'Selesai' ? 'text-green-600' : 'text-yellow-600'}">
-                ${status}
-              </span>
-            </p>
-            ${status === "Proses" ? `
-              <button onclick="selesaikanPesanan(${index})"
-                class="bg-green-500 hover:bg-green-600 text-white py-1 rounded-lg text-sm">
-                Selesaikan Pesanan
-              </button>` : ""}
+    card.innerHTML = `
+  <div class="mb-2">
+    <p class="text-sm"><strong>Nama:</strong> ${item.nama}</p>
+    <p class="text-sm"><strong>Tanggal:</strong> ${item.tanggal}</p>
+    <p class="text-sm"><strong>Metode:</strong> ${item.metode}</p>
+    ${item.metode === 'COD' ? `
+      <p class="text-sm"><strong>Alamat:</strong> ${item.alamat || '-'}</p>
+      <p class="text-sm"><strong>No HP:</strong> ${item.nohp || '-'}</p>
+    ` : ''}
+  </div>
+  <div class="text-sm">
+    <p><strong>Produk:</strong></p>
+    <ul class="list-disc ml-5 text-gray-700">${produkList}</ul>
+    <p class="mt-1"><strong>Total:</strong> Rp${item.total}</p>
+  </div>
+  <div class="mt-3 flex flex-col gap-2">
+    <p><strong>Status:</strong> 
+      <span id="status-${index}" class="font-semibold ${status === 'Selesai' ? 'text-green-600' : 'text-yellow-600'}">
+        ${status}
+      </span>
+    </p>
+    ${status === "Proses" ? `
+      <button onclick="selesaikanPesanan(${index})"
+        class="bg-green-500 hover:bg-green-600 text-white py-1 rounded-lg text-sm">
+        Selesaikan Pesanan
+      </button>` : ""}
+    <button onclick="hapusPesanan(${index})"
+      class="bg-red-500 hover:bg-red-600 text-white py-1 rounded-lg text-sm">
+      Hapus
+    </button>
+  </div>
+`;
 
-            <button onclick="hapusPesanan(${index})"
-              class="bg-red-500 hover:bg-red-600 text-white py-1 rounded-lg text-sm">
-              Hapus
-            </button>
-          </div>
-        `;
 
         daftar.appendChild(card);
       });
