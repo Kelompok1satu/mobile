@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pesanan Lainnya - Riz-To Snack</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen px-4 py-6 bg-white">
+  <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Pesanan Lainnya</h2>
+
+  <form id="formLainnya" class="max-w-md mx-auto space-y-4 text-sm">
+    <div>
+      <label class="block font-medium text-gray-700">Nama Pemesan</label>
+      <input type="text" id="nama" required class="w-full border rounded px-3 py-2">
+    </div>
+
+    <div>
+      <label class="block font-medium text-gray-700">Nama Produk</label>
+      <input type="text" id="produk" placeholder="Contoh: Brambang 1kg" required class="w-full border rounded px-3 py-2">
+    </div>
+
+    <div>
+      <label class="block font-medium text-gray-700">Jumlah</label>
+      <input type="number" id="jumlah" min="1" required class="w-full border rounded px-3 py-2">
+    </div>
+
+    <div>
+      <label class="block font-medium text-gray-700">Tanggal Diambil</label>
+      <input type="date" id="tanggal" required class="w-full border rounded px-3 py-2">
+    </div>
+
+    <div>
+      <label class="block font-medium text-gray-700">Metode Pengambilan</label>
+      <select id="metode" required class="w-full border rounded px-3 py-2">
+        <option value="">Pilih Metode</option>
+        <option value="COD">COD</option>
+        <option value="Ambil di Rumah">Ambil di Rumah</option>
+      </select>
+    </div>
+
+    <div id="codFields" class="space-y-3 hidden">
+      <div>
+        <label for="alamat" class="block font-medium text-gray-700">Alamat</label>
+        <textarea id="alamat" rows="2" class="w-full border rounded px-3 py-2"></textarea>
+      </div>
+      <div>
+        <label for="nohp" class="block font-medium text-gray-700">No HP</label>
+        <input type="tel" id="nohp" class="w-full border rounded px-3 py-2">
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-6 rounded shadow">
+        Simpan Pesanan
+      </button>
+    </div>
+  </form>
+
+  <script>
+    const metodeSelect = document.getElementById('metode');
+    const codFields = document.getElementById('codFields');
+
+    metodeSelect.addEventListener('change', () => {
+      if (metodeSelect.value === 'COD') {
+        codFields.classList.remove('hidden');
+      } else {
+        codFields.classList.add('hidden');
+      }
+    });
+
+    document.getElementById('formLainnya').addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const nama = document.getElementById('nama').value.trim();
+      const produk = document.getElementById('produk').value.trim();
+      const jumlah = parseInt(document.getElementById('jumlah').value);
+      const tanggal = document.getElementById('tanggal').value;
+      const metode = document.getElementById('metode').value;
+
+      let alamat = '';
+      let nohp = '';
+      if (metode === 'COD') {
+        alamat = document.getElementById('alamat').value.trim();
+        nohp = document.getElementById('nohp').value.trim();
+        if (!alamat || !nohp) {
+          alert('Alamat dan No HP wajib diisi untuk metode COD.');
+          return;
+        }
+      }
+
+      const total = 0; // harga tidak diinput, jadi total default ke 0
+      const pesanan = {
+        nama,
+        produk: [{ nama: produk, jumlah }], // tanpa harga
+        tanggal,
+        metode,
+        total,
+        ...(metode === 'COD' ? { alamat, nohp } : {})
+      };
+
+      let riwayat = JSON.parse(localStorage.getItem('riwayat')) || [];
+      riwayat.push(pesanan);
+      localStorage.setItem('riwayat', JSON.stringify(riwayat));
+
+      alert('Pesanan berhasil disimpan!');
+      window.location.href = 'riwayat.html';
+    });
+  </script>
+</body>
+</html>
