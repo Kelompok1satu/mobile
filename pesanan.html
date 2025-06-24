@@ -88,6 +88,18 @@
       </label>
     </div>
 
+    <!-- Alamat & No HP (hanya saat COD) -->
+    <div id="codFields" class="space-y-3 hidden">
+      <div>
+        <label for="alamat" class="block font-medium text-gray-700">Alamat</label>
+        <textarea id="alamat" rows="2" class="w-full border rounded px-3 py-2"></textarea>
+      </div>
+      <div>
+        <label for="nohp" class="block font-medium text-gray-700">No HP</label>
+        <input type="tel" id="nohp" class="w-full border rounded px-3 py-2">
+      </div>
+    </div>
+
     <!-- Total -->
     <div>
       <label for="total" class="block font-medium text-gray-700">Total Bayar (Rp)</label>
@@ -139,19 +151,50 @@
       updateDaftar();
     });
 
+    // Tampilkan kolom Alamat & No HP jika COD
+    const metodeRadios = document.querySelectorAll('input[name="metode"]');
+    const codFields = document.getElementById('codFields');
+
+    metodeRadios.forEach(radio => {
+      radio.addEventListener('change', () => {
+        if (radio.value === "COD" && radio.checked) {
+          codFields.classList.remove("hidden");
+        } else if (radio.checked) {
+          codFields.classList.add("hidden");
+        }
+      });
+    });
+
     document.getElementById('formPesanan').addEventListener('submit', (e) => {
       e.preventDefault();
       if (keranjang.length === 0) {
         alert("Silakan tambahkan minimal satu produk.");
         return;
       }
+
+      const metode = document.querySelector('input[name="metode"]:checked').value;
+
+      // Validasi alamat & nohp jika COD
+      let alamat = '';
+      let nohp = '';
+      if (metode === "COD") {
+        alamat = document.getElementById('alamat').value.trim();
+        nohp = document.getElementById('nohp').value.trim();
+        if (!alamat || !nohp) {
+          alert("Alamat dan No HP wajib diisi untuk metode COD.");
+          return;
+        }
+      }
+
       const pesanan = {
         nama: document.getElementById('nama').value,
         produk: keranjang,
         tanggal: document.getElementById('tanggal').value,
-        metode: document.querySelector('input[name="metode"]:checked').value,
-        total: totalInput.value
+        metode,
+        total: totalInput.value,
+        ...(metode === "COD" ? { alamat, nohp } : {})
       };
+
       let riwayat = JSON.parse(localStorage.getItem('riwayat')) || [];
       riwayat.push(pesanan);
       localStorage.setItem('riwayat', JSON.stringify(riwayat));
