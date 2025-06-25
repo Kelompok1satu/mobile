@@ -16,6 +16,12 @@
 <body class="min-h-screen px-4 py-4 bg-white">
   <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Formulir Pesanan</h2>
     
+   <a href="mobile.html" class="absolute top-4 left-4 flex items-center gap-2 bg-white text-yellow-600 font-medium px-4 py-2 rounded-full shadow-lg hover:bg-yellow-100 transition duration-200">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+    </svg>
+  </a>
+
   <form id="formPesanan" class="space-y-5 text-sm">
     <!-- Nama -->
     <div>
@@ -49,11 +55,10 @@
         </label>
 
         <!-- Tombol ke Pesanan Lainnya -->
-<a href="pesanlain.html"
-  class="min-w-[100px] flex items-center justify-center px-3 py-2 border-2 border-dashed rounded-xl text-center text-sm text-yellow-600 font-medium bg-yellow-50 hover:bg-yellow-100">
-  + Lainnya
-</a>
-
+        <a href="pesanlain.html"
+          class="min-w-[100px] flex items-center justify-center px-3 py-2 border-2 border-dashed rounded-xl text-center text-sm text-yellow-600 font-medium bg-yellow-50 hover:bg-yellow-100">
+          + Lainnya
+        </a>
       </div>
     </div>
 
@@ -73,7 +78,7 @@
     <!-- Daftar Pesanan -->
     <div>
       <h3 class="font-semibold mb-1 text-gray-700">Daftar Pesanan:</h3>
-      <ul id="daftarProduk" class="text-gray-800 text-sm list-disc ml-4 space-y-1"></ul>
+      <ul id="daftarProduk" class="text-gray-800 text-sm space-y-1"></ul>
     </div>
 
     <!-- Tanggal -->
@@ -137,13 +142,24 @@
     function updateDaftar() {
       daftarProduk.innerHTML = '';
       let total = 0;
-      keranjang.forEach(item => {
+      keranjang.forEach((item, index) => {
         const li = document.createElement('li');
-        li.textContent = `${item.nama} x${item.jumlah} = Rp${item.harga * item.jumlah}`;
+        li.classList.add("flex", "justify-between", "items-center");
+
+        li.innerHTML = `
+          <span>${item.nama} x${item.jumlah} = Rp${item.harga * item.jumlah}</span>
+          <button onclick="hapusProduk(${index})" class="text-red-500 text-xs ml-2 hover:underline">Hapus</button>
+        `;
+
         daftarProduk.appendChild(li);
         total += item.harga * item.jumlah;
       });
       totalInput.value = total;
+    }
+
+    function hapusProduk(index) {
+      keranjang.splice(index, 1);
+      updateDaftar();
     }
 
     document.getElementById('tambahProduk').addEventListener('click', () => {
