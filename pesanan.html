@@ -1,229 +1,71 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Form Pesanan - Riz-To Snack</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Riz-To Snack</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #ffffff;
+      background: #ffffff;
+      min-height: 100vh;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(250, 215, 17, 0.979);
     }
   </style>
 </head>
-<body class="min-h-screen px-4 py-4 bg-white">
-  <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Formulir Pesanan</h2>
-    
-   <a href="mobile.html" class="absolute top-4 left-4 flex items-center gap-2 bg-white text-yellow-600 font-medium px-4 py-2 rounded-full shadow-lg hover:bg-yellow-100 transition duration-200">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-    </svg>
-  </a>
+<body class="flex flex-col justify-between overflow-x-hidden">
 
-  <form id="formPesanan" class="space-y-5 text-sm">
-    <!-- Nama -->
-    <div>
-      <label for="nama" class="block font-medium text-gray-700">Nama Pemesan</label>
-      <input type="text" id="nama" required class="w-full border rounded px-3 py-2">
-    </div>
+  <!-- Header -->
+  <div class="w-full bg-yellow-300 shadow-md py-4 px-6 flex items-center gap-4 rounded-b-3xl">
+    <img src="946b1906-f3a9-41c1-acdf-4234b909d0de.jfif" alt="Logo" class="w-10 h-10 rounded-full" />
+    <h1 class="text-xl font-bold text-gray-800">Riz-To Snack</h1>
+  </div>
 
+  <!-- Logo Tengah -->
+  <div class="text-center mt-6 mb-4">
+    <img src="946b1906-f3a9-41c1-acdf-4234b909d0de.jfif"
+         class="w-32 h-32 sm:w-40 sm:h-40 object-cover rounded-full mx-auto animate-bounce shadow-xl ring-4 ring-yellow-200"
+         alt="Logo Bulat" />
+  </div>
+
+  <!-- Menu Grid -->
+  <div class="grid grid-cols-2 gap-4 px-6 max-w-md mx-auto pb-24">
     <!-- Produk -->
-    <div>
-      <label class="block font-medium text-gray-700 mb-1">Pilih Produk</label>
-      <div class="flex space-x-3 overflow-x-auto pb-2" id="produkContainer">
-        <!-- Brambang -->
-        <label class="min-w-[100px] p-2 rounded-xl shadow flex flex-col items-center border-2 border-transparent cursor-pointer">
-          <input type="radio" name="produk" value="Brambang Goreng" class="hidden peer" checked>
-          <img src="brambang.jpg" class="w-16 h-16 rounded-full mb-1 object-cover peer-checked:ring-4 peer-checked:ring-yellow-400">
-          <span class="text-center">Brambang<br><span class="text-yellow-500">Rp10.000</span></span>
-        </label>
+    <a href="produk.html" class="glass w-full h-28 rounded-2xl p-4 shadow-lg flex flex-col items-center justify-center text-gray-700 hover:text-blue-600 transition transform duration-300 hover:scale-105">
+      <img src="produkicon.png" class="h-10 w-10 mb-1" />
+      <span class="text-xs text-center font-medium">Produk</span>
+    </a>
 
-        <!-- Peyek -->
-        <label class="min-w-[100px] p-2 rounded-xl shadow flex flex-col items-center border-2 border-transparent cursor-pointer">
-          <input type="radio" name="produk" value="Peyek" class="hidden peer">
-          <img src="peyek10k.jpg" class="w-16 h-16 rounded-full mb-1 object-cover peer-checked:ring-4 peer-checked:ring-yellow-400">
-          <span class="text-center">Peyek<br><span class="text-yellow-500">Rp15.000</span></span>
-        </label>
+    <!-- Pesanan -->
+    <a href="pesanan.html" class="glass w-full h-28 rounded-2xl p-4 shadow-lg flex flex-col items-center justify-center text-gray-700 hover:text-yellow-600 transition transform duration-300 hover:scale-105">
+      <img src="pesanan.png" class="h-10 w-10 mb-1" />
+      <span class="text-xs text-center font-medium">Pesanan</span>
+    </a>
 
-        <!-- Peyek 5lt -->
-        <label class="min-w-[100px] p-2 rounded-xl shadow flex flex-col items-center border-2 border-transparent cursor-pointer">
-          <input type="radio" name="produk" value="Peyek 5lt" class="hidden peer">
-          <img src="peyek5lt.jpg" class="w-16 h-16 rounded-full mb-1 object-cover peer-checked:ring-4 peer-checked:ring-yellow-400">
-          <span class="text-center">Peyek 5lt<br><span class="text-yellow-500">Rp50.000</span></span>
-        </label>
+    <!-- Riwayat Pesanan -->
+    <a href="riwayat.html" class="glass w-full h-28 rounded-2xl p-4 shadow-lg flex flex-col items-center justify-center text-gray-700 hover:text-purple-600 transition transform duration-300 hover:scale-105">
+      <img src="riwayatpes.png" class="h-10 w-10 mb-1" />
+      <span class="text-xs text-center font-medium">Riwayat Pesanan</span>
+    </a>
 
-        <!-- Tombol ke Pesanan Lainnya -->
-        <a href="pesanlain.html"
-          class="min-w-[100px] flex items-center justify-center px-3 py-2 border-2 border-dashed rounded-xl text-center text-sm text-yellow-600 font-medium bg-yellow-50 hover:bg-yellow-100">
-          + Lainnya
-        </a>
-      </div>
-    </div>
+    <!-- Riwayat Penjualan -->
+    <a href="riwpen.html" class="glass w-full h-28 rounded-2xl p-4 shadow-lg flex flex-col items-center justify-center text-gray-700 hover:text-purple-600 transition transform duration-300 hover:scale-105">
+      <img src="penjualan.png" class="h-10 w-10 mb-1" />
+      <span class="text-xs text-center font-medium">Riwayat Penjualan</span>
+    </a>
+  </div>
 
-    <!-- Jumlah -->
-    <div>
-      <label for="jumlah" class="block font-medium text-gray-700">Jumlah</label>
-      <input type="number" id="jumlah" min="1" value="1" class="w-full border rounded px-3 py-2">
-    </div>
+  <!-- Footer Fixed -->
+  <footer class="fixed bottom-0 left-0 w-full bg-yellow-300 shadow-md py-3 text-center text-sm text-gray-800 rounded-t-3xl z-50">
+    Riz-To Snack &copy; 2025
+  </footer>
 
-    <!-- Tombol Tambah -->
-    <div class="text-center">
-      <button type="button" id="tambahProduk" class="bg-yellow-400 hover:bg-yellow-500 text-white font-semibold px-4 py-2 rounded shadow">
-        Tambah Produk
-      </button>
-    </div>
-
-    <!-- Daftar Pesanan -->
-    <div>
-      <h3 class="font-semibold mb-1 text-gray-700">Daftar Pesanan:</h3>
-      <ul id="daftarProduk" class="text-gray-800 text-sm space-y-1"></ul>
-    </div>
-
-    <!-- Tanggal -->
-    <div>
-      <label for="tanggal" class="block font-medium text-gray-700">Tanggal Diambil</label>
-      <input type="date" id="tanggal" required class="w-full border rounded px-3 py-2">
-    </div>
-
-    <!-- Metode -->
-    <div>
-      <label class="block font-medium text-gray-700 mb-1">Metode Pengambilan</label>
-      <label class="inline-flex items-center mr-4">
-        <input type="radio" name="metode" value="COD" required class="form-radio text-yellow-500">
-        <span class="ml-2">COD</span>
-      </label>
-      <label class="inline-flex items-center">
-        <input type="radio" name="metode" value="Ambil di Rumah" required class="form-radio text-yellow-500">
-        <span class="ml-2">Ambil di Rumah</span>
-      </label>
-    </div>
-
-    <!-- Alamat & No HP (hanya saat COD) -->
-    <div id="codFields" class="space-y-3 hidden">
-      <div>
-        <label for="alamat" class="block font-medium text-gray-700">Alamat</label>
-        <textarea id="alamat" rows="2" class="w-full border rounded px-3 py-2"></textarea>
-      </div>
-      <div>
-        <label for="nohp" class="block font-medium text-gray-700">No HP</label>
-        <input type="tel" id="nohp" class="w-full border rounded px-3 py-2">
-      </div>
-    </div>
-
-    <!-- Total -->
-    <div>
-      <label for="total" class="block font-medium text-gray-700">Total Bayar (Rp)</label>
-      <input type="number" id="total" readonly class="w-full border rounded px-3 py-2 bg-gray-100 cursor-not-allowed">
-    </div>
-
-    <!-- Submit -->
-    <div class="text-center">
-      <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-6 rounded shadow">
-        Buat Pesanan
-      </button>
-    </div>
-  </form>
-
-  <script>
-    const hargaProduk = {
-      "Brambang Goreng": 10000,
-      "Peyek": 15000,
-      "Peyek 5lt": 50000
-    };
-
-    let keranjang = [];
-
-    const jumlahInput = document.getElementById('jumlah');
-    const daftarProduk = document.getElementById('daftarProduk');
-    const totalInput = document.getElementById('total');
-
-    function updateDaftar() {
-      daftarProduk.innerHTML = '';
-      let total = 0;
-      keranjang.forEach((item, index) => {
-        const li = document.createElement('li');
-        li.classList.add("flex", "justify-between", "items-center");
-
-        li.innerHTML = `
-          <span>${item.nama} x${item.jumlah} = Rp${item.harga * item.jumlah}</span>
-          <button onclick="hapusProduk(${index})" class="text-red-500 text-xs ml-2 hover:underline">Hapus</button>
-        `;
-
-        daftarProduk.appendChild(li);
-        total += item.harga * item.jumlah;
-      });
-      totalInput.value = total;
-    }
-
-    function hapusProduk(index) {
-      keranjang.splice(index, 1);
-      updateDaftar();
-    }
-
-    document.getElementById('tambahProduk').addEventListener('click', () => {
-      const nama = document.querySelector('input[name="produk"]:checked').value;
-      const jumlah = parseInt(jumlahInput.value);
-      if (jumlah < 1) {
-        alert("Jumlah minimal 1");
-        return;
-      }
-      const harga = hargaProduk[nama];
-      keranjang.push({ nama, jumlah, harga });
-      updateDaftar();
-    });
-
-    // Tampilkan kolom Alamat & No HP jika COD
-    const metodeRadios = document.querySelectorAll('input[name="metode"]');
-    const codFields = document.getElementById('codFields');
-
-    metodeRadios.forEach(radio => {
-      radio.addEventListener('change', () => {
-        if (radio.value === "COD" && radio.checked) {
-          codFields.classList.remove("hidden");
-        } else if (radio.checked) {
-          codFields.classList.add("hidden");
-        }
-      });
-    });
-
-    document.getElementById('formPesanan').addEventListener('submit', (e) => {
-      e.preventDefault();
-      if (keranjang.length === 0) {
-        alert("Silakan tambahkan minimal satu produk.");
-        return;
-      }
-
-      const metode = document.querySelector('input[name="metode"]:checked').value;
-
-      // Validasi alamat & nohp jika COD
-      let alamat = '';
-      let nohp = '';
-      if (metode === "COD") {
-        alamat = document.getElementById('alamat').value.trim();
-        nohp = document.getElementById('nohp').value.trim();
-        if (!alamat || !nohp) {
-          alert("Alamat dan No HP wajib diisi untuk metode COD.");
-          return;
-        }
-      }
-
-      const pesanan = {
-        nama: document.getElementById('nama').value,
-        produk: keranjang,
-        tanggal: document.getElementById('tanggal').value,
-        metode,
-        total: totalInput.value,
-        ...(metode === "COD" ? { alamat, nohp } : {})
-      };
-
-      let riwayat = JSON.parse(localStorage.getItem('riwayat')) || [];
-      riwayat.push(pesanan);
-      localStorage.setItem('riwayat', JSON.stringify(riwayat));
-      alert("Pesanan berhasil dikirim!");
-      window.location.href = "riwayat.html";
-    });
-  </script>
 </body>
 </html>
