@@ -2,15 +2,18 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Riz-To Snack</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
   <style>
-    body {
+    html, body {
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
       font-family: 'Poppins', sans-serif;
       background: #ffffff;
-      min-height: 100vh;
     }
     .glass {
       background: rgba(255, 255, 255, 0.3);
@@ -20,46 +23,50 @@
     }
   </style>
 </head>
-<body class="flex flex-col justify-between overflow-x-hidden">
+<body class="flex flex-col overflow-hidden">
 
   <!-- Header -->
-  <div class="w-full bg-yellow-300 shadow-md py-4 px-6 flex items-center gap-4 rounded-b-3xl">
-    <img src="946b1906-f3a9-41c1-acdf-4234b909d0de.jfif" alt="Logo" class="w-10 h-10 rounded-full" />
-    <h1 class="text-xl font-bold text-gray-800">Riz-To Snack</h1>
+  <div class="w-full bg-yellow-300 shadow-md py-3 px-4 flex items-center gap-3 rounded-b-3xl">
+    <img src="946b1906-f3a9-41c1-acdf-4234b909d0de.jfif" alt="Logo" class="w-9 h-9 rounded-full" />
+    <h1 class="text-lg font-bold text-gray-800">Riz-To Snack</h1>
   </div>
 
-  <!-- Logo Tengah -->
-  <div class="text-center mt-6 mb-4">
-    <img src="946b1906-f3a9-41c1-acdf-4234b909d0de.jfif"
-         class="w-32 h-32 sm:w-40 sm:h-40 object-cover rounded-full mx-auto animate-bounce shadow-xl ring-4 ring-yellow-200"
-         alt="Logo Bulat" />
-  </div>
+  <!-- Konten Tengah -->
+  <div class="flex-1 flex flex-col justify-center items-center px-4">
 
-  <!-- Menu Grid -->
-  <div class="grid grid-cols-2 gap-4 px-6 max-w-md mx-auto pb-24">
-    <!-- Produk -->
-    <a href="produk.html" class="glass w-full h-28 rounded-2xl p-4 shadow-lg flex flex-col items-center justify-center text-gray-700 hover:text-blue-600 transition transform duration-300 hover:scale-105">
-      <img src="produkicon.png" class="h-10 w-10 mb-1" />
-      <span class="text-xs text-center font-medium">Produk</span>
-    </a>
+    <!-- Logo Tengah -->
+    <div class="mb-4">
+      <img src="946b1906-f3a9-41c1-acdf-4234b909d0de.jfif"
+           class="w-28 h-28 object-cover rounded-full animate-bounce shadow-xl ring-4 ring-yellow-200"
+           alt="Logo Bulat" />
+    </div>
 
-    <!-- Pesanan -->
-    <a href="pesanan.html" class="glass w-full h-28 rounded-2xl p-4 shadow-lg flex flex-col items-center justify-center text-gray-700 hover:text-yellow-600 transition transform duration-300 hover:scale-105">
-      <img src="pesanan.png" class="h-10 w-10 mb-1" />
-      <span class="text-xs text-center font-medium">Pesanan</span>
-    </a>
+    <!-- Menu Grid -->
+    <div class="grid grid-cols-2 gap-4 w-full max-w-md">
+      <!-- Produk -->
+      <a href="produk.html" class="glass w-full h-24 rounded-2xl p-2 shadow-lg flex flex-col items-center justify-center text-gray-700 text-xs hover:text-blue-600 transition duration-200">
+        <img src="produkicon.png" class="h-8 w-8 mb-1" />
+        <span class="font-medium text-center">Produk</span>
+      </a>
 
-    <!-- Riwayat Pesanan -->
-    <a href="riwayat.html" class="glass w-full h-28 rounded-2xl p-4 shadow-lg flex flex-col items-center justify-center text-gray-700 hover:text-purple-600 transition transform duration-300 hover:scale-105">
-      <img src="riwayatpes.png" class="h-10 w-10 mb-1" />
-      <span class="text-xs text-center font-medium">Riwayat Pesanan</span>
-    </a>
+      <!-- Pesanan -->
+      <a href="pesanan.html" class="glass w-full h-24 rounded-2xl p-2 shadow-lg flex flex-col items-center justify-center text-gray-700 text-xs hover:text-yellow-600 transition duration-200">
+        <img src="pesanan.png" class="h-8 w-8 mb-1" />
+        <span class="font-medium text-center">Pesanan</span>
+      </a>
 
-    <!-- Riwayat Penjualan -->
-    <a href="riwpen.html" class="glass w-full h-28 rounded-2xl p-4 shadow-lg flex flex-col items-center justify-center text-gray-700 hover:text-purple-600 transition transform duration-300 hover:scale-105">
-      <img src="penjualan.png" class="h-10 w-10 mb-1" />
-      <span class="text-xs text-center font-medium">Riwayat Penjualan</span>
-    </a>
+      <!-- Riwayat Pesanan -->
+      <a href="riwayat.html" class="glass w-full h-24 rounded-2xl p-2 shadow-lg flex flex-col items-center justify-center text-gray-700 text-xs hover:text-purple-600 transition duration-200">
+        <img src="riwayatpes.png" class="h-8 w-8 mb-1" />
+        <span class="font-medium text-center">Riwayat Pesanan</span>
+      </a>
+
+      <!-- Riwayat Penjualan -->
+      <a href="riwpen.html" class="glass w-full h-24 rounded-2xl p-2 shadow-lg flex flex-col items-center justify-center text-gray-700 text-xs hover:text-purple-600 transition duration-200">
+        <img src="penjualan.png" class="h-8 w-8 mb-1" />
+        <span class="font-medium text-center">Riwayat Penjualan</span>
+      </a>
+    </div>
   </div>
 
 </body>
